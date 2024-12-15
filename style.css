@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: black;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Keep items stacked vertically */
+    overflow: hidden;
+    position: relative; /* Allows fireworks to position correctly */
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    animation: glow 2s infinite alternate;
+    margin: 0; /* Remove any default margin */
+    z-index: 2; /* Ensures it's above the image */
+    position: relative; /* Ensure text is relative to the flex container */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    z-index: 2;
+    color: white;
+    font-family: 'Outline';
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative; /* Relative to the flex container */
+}
+
+form {
+    z-index: 3;
+    display: flex;
+    flex-direction: column; /* Stack input and button vertically */
+    align-items: center; /* Center align items */
+    gap: 20px; /* Space between input and button */
+}
+
+#wishes {
+    padding: 12px 15px;
+    width: 300px;
+    max-width: 400px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.9); /* Slight transparency */
+    color: #333; /* Text color for better readability */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    z-index: 3; /* Ensures it appears above background and image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for a clean effect */
+    text-align: center; /* Center text alignment */
+}
+
+#wishes:focus {
+    border-color: #f39c12; /* Gold color on focus */
+    box-shadow: 0 0 5px rgba(243, 156, 18, 0.5); /* Soft glowing effect */
+    background-color: rgba(255, 255, 255, 1); /* Remove transparency on focus */
+}
+
+button {
+    z-index: 3;
+    background-color: rgb(255, 34, 34);
+    border: none;
+    color: white;
+    width: 300px;
+    height: 50px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-family: 'Outline';
+    font-size: x-large;
+    font-weight: 300;
+    position: relative; /* Relative to the flex container */
+    text-align: center;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: rgb(200, 30, 30);
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+img {
+    opacity: 30%;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover; /* Ensures the image covers the entire background without distortion */
+    position: absolute; /* Ensures it stays in the background */
+    top: 0;
+    left: 0;
+    z-index: 1; /* Ensures it is behind all content */
+}
+
+span {
+    color: rgb(255, 170, 0);
+}
+
+footer {
+    width: 100%;
+    color: white;
+    z-index: 2;
+    position: absolute;
+    bottom: 10px; /* Move footer to the bottom */
+    text-align: center;
+}
+
+footer a {
+    color: #f39c12; /* Gold link color */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+#image {
+    z-index: 1;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    button {
+        width: 250px;
+        height: 45px;
+        font-size: large;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    #wishes {
+        width: 250px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    button {
+        width: 200px;
+        height: 40px;
+        font-size: medium;
+     
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+
+    #wishes {
+        width: 200px;
+        font-size: 0.9rem;
+    }
+}
